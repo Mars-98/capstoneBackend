@@ -23,17 +23,17 @@ router.post('/signup', (req, res) => {
     } else if(!/^[a-zA-Z ]*$/.test(name)) {
         res.json({
             status: "FAILED",
-            message: "Inavlid name entered"
+            message: "Invalid name entered"
         });
     } else if(!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
         res.json({
             status: "FAILED",
-            message: "Inavlid email entered"
+            message: "Invalid email entered"
         });
     } else if(!new Date(dateOfBirth).getTime()) {
         res.json({
             status: "FAILED",
-            message: "Inavlid date of birth entered"
+            message: "Invalid date of birth entered"
         });
     } else if(password.length < 8) {
         res.json({
@@ -120,7 +120,7 @@ router.post('/signin', (req, res) => {
                     } else{
                         res.json({
                             status: "FAILED",
-                            message: "Inavlid password entered"
+                            message: "Invalid password entered"
                         });
                     }
                 })
@@ -133,7 +133,7 @@ router.post('/signin', (req, res) => {
             } else{
                 res.json({
                     status: "FAILED",
-                    message: "Inavlid credentials entered"
+                    message: "Invalid credentials entered"
                 });
             }
            
